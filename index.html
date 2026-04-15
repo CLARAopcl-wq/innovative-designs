@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#1A1A1A"/>
+<title>Innovative Designs LLC — General Contractor | Struthers, Ohio</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --white:#FFFFFF;
+  --light:#F5F5F5;
+  --dark:#1A1A1A;
+  --gold:#D4A017;
+  --gold2:#E8B520;
+  --text:#111111;
+  --muted:#666666;
+  --border:#E0E0E0;
+  --shadow:0 4px 20px rgba(0,0,0,0.08);
+  --shadow-md:0 8px 32px rgba(0,0,0,0.12);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);line-height:1.6;overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 48px;height:68px;display:flex;justify-content:space-between;align-items:center;transition:background 0.3s,box-shadow 0.3s;}
+nav.scrolled{background:var(--white);box-shadow:0 2px 12px rgba(0,0,0,0.08);}
+nav.scrolled .nav-link{color:var(--text);}
+nav.scrolled .nav-logo{color:var(--text);}
+.nav-logo{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:800;color:#fff;letter-spacing:-0.3px;text-decoration:none;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-link{color:rgba(255,255,255,0.85);text-decoration:none;font-size:0.88rem;font-weight:500;transition:color 0.2s;}
+.nav-link:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:#fff;padding:10px 22px;border-radius:8px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:background 0.2s;}
+.nav-cta:hover{background:var(--gold2);}
+
+/* ── HERO ── */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;}
+.hero-bg{position:absolute;inset:0;background:url('images/id-hero.jpg') center/cover no-repeat;}
+.hero-overlay{position:absolute;inset:0;background:rgba(26,26,26,0.62);}
+.hero-content{position:relative;z-index:10;width:100%;max-width:1200px;margin:0 auto;padding:100px 48px 60px;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;}
+.hero-text{}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(212,160,23,0.2);border:1px solid rgba(212,160,23,0.4);color:var(--gold);padding:6px 14px;border-radius:6px;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
+h1{font-family:'Outfit',sans-serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-1px;margin-bottom:18px;}
+h1 em{color:var(--gold);font-style:normal;}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.75);margin-bottom:24px;line-height:1.7;max-width:500px;}
+.services-inline{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
+.service-pill{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.85);padding:5px 12px;border-radius:20px;font-size:0.78rem;font-weight:500;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:#fff;padding:14px 28px;border-radius:8px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block;}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);}
+.btn-outline-white{border:2px solid rgba(255,255,255,0.5);color:#fff;padding:14px 28px;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:border-color 0.2s;display:inline-block;}
+.btn-outline-white:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ── HERO FORM ── */
+.hero-form-card{background:var(--white);border-radius:12px;padding:32px;box-shadow:0 20px 60px rgba(0,0,0,0.3);}
+.hero-form-card h3{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:800;color:var(--text);margin-bottom:4px;}
+.hero-form-card p{font-size:0.82rem;color:var(--muted);margin-bottom:20px;}
+.form-field{margin-bottom:14px;}
+.form-field label{display:block;font-size:0.78rem;font-weight:600;color:var(--text);margin-bottom:5px;}
+.form-field input,.form-field select,.form-field textarea{width:100%;border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;font-size:0.9rem;font-family:inherit;color:var(--text);background:var(--white);outline:none;transition:border-color 0.2s;}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold);}
+.form-field textarea{resize:vertical;min-height:80px;}
+.form-submit{width:100%;background:var(--gold);color:#fff;border:none;padding:14px;border-radius:8px;font-weight:800;font-size:1rem;font-family:inherit;cursor:pointer;transition:background 0.2s;margin-top:4px;}
+.form-submit:hover{background:var(--gold2);}
+.form-success{display:none;text-align:center;padding:20px;}
+.form-success .check{font-size:2.5rem;margin-bottom:10px;}
+.form-success h4{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:6px;}
+.form-success p{font-size:0.88rem;color:var(--muted);}
+
+/* ── STICKY CTA ── */
+.sticky-cta{position:fixed;bottom:24px;right:24px;z-index:300;background:var(--gold);color:#fff;padding:14px 22px;border-radius:50px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 8px 24px rgba(212,160,23,0.4);transition:all 0.2s;display:none;align-items:center;gap:8px;}
+.sticky-cta.visible{display:flex;}
+.sticky-cta:hover{background:var(--gold2);transform:translateY(-2px);}
+
+/* ── PHONE BAR ── */
+.phone-bar{background:var(--dark);padding:16px 48px;display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap;}
+.phone-bar p{color:rgba(255,255,255,0.8);font-size:0.92rem;}
+.phone-bar a{color:var(--gold);font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;text-decoration:none;letter-spacing:-0.3px;}
+
+/* ── SECTIONS ── */
+section{padding:80px 24px;}
+.container{max-width:1100px;margin:0 auto;}
+.section-label{font-size:0.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.section-title{font-family:'Outfit',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.5px;margin-bottom:14px;color:var(--text);}
+.section-sub{color:var(--muted);font-size:0.97rem;max-width:540px;line-height:1.7;}
+
+/* ── ABOUT OVERLAP ── */
+.about-section{background:var(--light);padding:80px 24px;margin-top:-40px;padding-top:120px;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.about-visual{position:relative;}
+.about-img{width:100%;height:420px;object-fit:cover;border-radius:10px;display:block;box-shadow:var(--shadow-md);}
+.about-accent{position:absolute;top:-16px;left:-16px;width:80px;height:80px;background:var(--gold);border-radius:8px;z-index:-1;opacity:0.6;}
+.about-accent2{position:absolute;bottom:-16px;right:-16px;width:60px;height:60px;background:var(--dark);border-radius:8px;z-index:-1;opacity:0.4;}
+.about-card{background:var(--white);border-radius:10px;padding:36px;box-shadow:var(--shadow);}
+.about-card p{color:var(--muted);line-height:1.8;margin-bottom:16px;}
+.about-card p strong{color:var(--text);}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+.about-stat{background:var(--light);border-radius:8px;padding:16px;text-align:center;}
+.about-stat-num{font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:900;color:var(--gold);line-height:1;}
+.about-stat-label{font-size:0.75rem;color:var(--muted);margin-top:4px;}
+
+/* ── MID CTA BAND ── */
+.cta-band{background:var(--dark);padding:60px 24px;text-align:center;}
+.cta-band h2{font-family:'Outfit',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:#fff;letter-spacing:-0.5px;margin-bottom:10px;}
+.cta-band p{color:rgba(255,255,255,0.65);font-size:0.97rem;margin-bottom:28px;}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin-top:48px;}
+.service-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.2s,box-shadow 0.2s;}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.service-card-img{height:200px;background-size:cover;background-position:center;position:relative;}
+.service-card-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(transparent,rgba(0,0,0,0.3));}
+.service-card-body{padding:22px;}
+.service-card-accent{width:32px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:12px;}
+.service-card h3{font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:8px;}
+.service-card p{font-size:0.85rem;color:var(--muted);line-height:1.5;}
+
+/* ── STATS SECTION ── */
+.stats-section{position:relative;min-height:340px;display:flex;align-items:flex-end;overflow:hidden;}
+.stats-bg{position:absolute;inset:0;background:url('images/id-kitchen.jpg') center/cover no-repeat;}
+.stats-overlay{position:absolute;inset:0;background:rgba(26,26,26,0.7);}
+.stats-content{position:relative;z-index:10;width:100%;padding:0 24px 48px;}
+.stats-container{max-width:900px;margin:0 auto;}
+.stats-card{background:rgba(255,255,255,0.95);border-radius:12px;padding:32px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;backdrop-filter:blur(8px);}
+.stat-item{text-align:center;}
+.stat-num{font-family:'Outfit',sans-serif;font-size:2.2rem;font-weight:900;color:var(--gold);line-height:1;}
+.stat-label{font-size:0.78rem;color:var(--muted);margin-top:6px;font-weight:500;}
+.stats-accent-left{position:absolute;left:0;bottom:64px;width:40px;height:120px;background:var(--gold);border-radius:0 8px 8px 0;opacity:0.7;}
+.stats-accent-right{position:absolute;right:0;bottom:64px;width:40px;height:80px;background:var(--gold);border-radius:8px 0 0 8px;opacity:0.5;}
+
+/* ── REVIEWS ── */
+.reviews-bg{background:var(--light);}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-top:48px;}
+.review-card{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:10px;padding:28px;box-shadow:var(--shadow);}
+.review-stars{color:var(--gold);font-size:0.9rem;letter-spacing:3px;margin-bottom:12px;}
+.review-text{font-size:0.9rem;color:var(--muted);line-height:1.8;margin-bottom:16px;font-style:italic;}
+.review-services{font-size:0.75rem;color:var(--gold);font-weight:600;margin-bottom:12px;}
+.review-author{font-weight:700;font-size:0.9rem;color:var(--text);}
+.review-rating{font-size:0.75rem;color:var(--muted);margin-top:2px;}
+
+/* ── HOURS / LOCATION ── */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;}
+.info-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:32px;box-shadow:var(--shadow);}
+.info-card h3{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.info-card h3::before{content:'';display:inline-block;width:4px;height:18px;background:var(--gold);border-radius:2px;}
+.hours-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:0.88rem;}
+.hours-row:last-child{border-bottom:none;}
+.hours-day{color:var(--muted);}
+.hours-time{font-weight:600;color:var(--text);}
+.contact-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;font-size:0.9rem;color:var(--muted);}
+.contact-item a{color:var(--gold);font-weight:700;text-decoration:none;}
+.contact-item a:hover{color:var(--gold2);}
+
+/* ── SECONDARY CTA ── */
+.secondary-cta{background:var(--light);padding:80px 24px;}
+.secondary-cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1000px;margin:0 auto;}
+.secondary-cta-text h2{font-family:'Outfit',sans-serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-0.5px;margin-bottom:14px;}
+.secondary-cta-text p{color:var(--muted);line-height:1.7;margin-bottom:24px;}
+.secondary-form{background:var(--white);border-radius:10px;padding:32px;box-shadow:var(--shadow);}
+.secondary-form h3{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:4px;}
+.secondary-form p{font-size:0.82rem;color:var(--muted);margin-bottom:20px;}
+
+/* ── FOOTER ── */
+.footer-cta{background:var(--gold);padding:60px 24px;text-align:center;}
+.footer-cta h2{font-family:'Outfit',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:#fff;letter-spacing:-0.5px;margin-bottom:10px;}
+.footer-cta p{color:rgba(255,255,255,0.85);margin-bottom:28px;}
+.btn-white{background:#fff;color:var(--gold);padding:16px 36px;border-radius:8px;font-weight:800;font-size:1rem;text-decoration:none;display:inline-block;transition:all 0.2s;}
+.btn-white:hover{background:var(--light);transform:translateY(-2px);}
+footer{background:#111;padding:24px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-logo{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:800;color:#fff;}
+.footer-logo span{color:var(--gold);}
+footer p{font-size:0.8rem;color:#555;}
+footer a{color:var(--gold);text-decoration:none;font-size:0.85rem;}
+
+@media(max-width:768px){
+  nav{padding:0 16px;}.nav-links{display:none;}
+  .hero-content{grid-template-columns:1fr;padding:90px 20px 40px;}
+  .about-grid,.info-grid,.secondary-cta-grid{grid-template-columns:1fr;}
+  .stats-card{grid-template-columns:1fr 1fr;}
+  .phone-bar{padding:14px 20px;}
+  .sticky-cta{bottom:0;right:0;left:0;border-radius:0;justify-content:center;}
+  footer{flex-direction:column;text-align:center;padding:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY CTA -->
+<a href="#get-quote" class="sticky-cta" id="sticky-cta">📞 Get a Free Quote</a>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">Innovative <span>Designs</span></a>
+  <div class="nav-links">
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#reviews" class="nav-link">Reviews</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+  <a href="#get-quote" class="nav-cta">Free Estimate</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-tag">⭐ 4.9 Stars · Struthers, Ohio</div>
+      <h1>Quality Work.<br><em>Every Time.</em></h1>
+      <p class="hero-sub">Innovative Designs LLC brings professional craftsmanship to flooring, tile, remodeling, and general contracting across Northeast Ohio.</p>
+      <div class="services-inline">
+        <span class="service-pill">Flooring</span>
+        <span class="service-pill">Tile Work</span>
+        <span class="service-pill">Remodeling</span>
+        <span class="service-pill">Kitchen Renovations</span>
+        <span class="service-pill">Drywall</span>
+        <span class="service-pill">Gutter Cleaning</span>
+        <span class="service-pill">General Repairs</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#get-quote" class="btn-gold">Get a Free Estimate</a>
+        <a href="tel:4404128403" class="btn-outline-white">📞 (440) 412-8403</a>
+      </div>
+    </div>
+
+    <!-- HERO FORM -->
+    <div class="hero-form-card" id="get-quote">
+      <h3>Get Your Free Estimate</h3>
+      <p>We'll get back to you within 24 hours.</p>
+      <div id="hero-form-fields">
+        <div class="form-field"><label>Your Name</label><input type="text" placeholder="John Smith"/></div>
+        <div class="form-field"><label>Phone Number</label><input type="tel" placeholder="(440) 000-0000"/></div>
+        <div class="form-field"><label>Project Type</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Flooring Installation</option>
+            <option>Flooring Repair</option>
+            <option>Tile Work / Installation</option>
+            <option>Kitchen Remodeling</option>
+            <option>Bathroom Remodeling</option>
+            <option>Drywall Repair</option>
+            <option>Interior Painting</option>
+            <option>Gutter Cleaning</option>
+            <option>General Repairs / Maintenance</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field"><label>Project Details</label><textarea placeholder="Tell us about your project..."></textarea></div>
+        <button class="form-submit" onclick="submitHeroForm()">Request Free Estimate →</button>
+      </div>
+      <div class="form-success" id="hero-form-success">
+        <div class="check">✅</div>
+        <h4>Request Received!</h4>
+        <p>We'll be in touch within 24 hours to schedule your free estimate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHONE BAR -->
+<div class="phone-bar">
+  <p>Ready to get started? Call us today for a free estimate!</p>
+  <a href="tel:4404128403">📞 (440) 412-8403</a>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-accent"></div>
+        <img src="images/id-flooring.jpg" alt="Innovative Designs LLC Flooring" class="about-img"/>
+        <div class="about-accent2"></div>
+      </div>
+      <div class="about-card">
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-title">Innovative Designs LLC</h2>
+        <p>We're a locally owned and operated general contracting company based in Struthers, Ohio. Every project we take on gets the same commitment — <strong>show up on time, do the job right, and go over and beyond what's asked.</strong></p>
+        <p>From luxury flooring installations to full kitchen remodels, our skilled team handles every phase of your project with professionalism and attention to detail you can trust.</p>
+        <div class="about-stats">
+          <div class="about-stat"><div class="about-stat-num">4.9★</div><div class="about-stat-label">Google Rating</div></div>
+          <div class="about-stat"><div class="about-stat-num">100%</div><div class="about-stat-label">5-Star Reviews</div></div>
+        </div>
+        <a href="#get-quote" class="btn-gold">Get a Free Estimate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA BAND -->
+<div class="cta-band">
+  <h2>Professional Work. Fair Prices.</h2>
+  <p>We give every project the attention it deserves — on time, every time.</p>
+  <a href="#get-quote" class="btn-gold">Request Your Free Estimate →</a>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">Full-service residential and commercial contracting across Northeast Ohio.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-img" style="background-image:url('images/id-flooring.jpg');"></div>
+        <div class="service-card-body">
+          <div class="service-card-accent"></div>
+          <h3>Flooring Installation & Repair</h3>
+          <p>Hardwood, luxury vinyl plank, laminate, carpet, and more. New installs and repairs done right the first time.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img" style="background-image:url('images/id-tile.jpg');"></div>
+        <div class="service-card-body">
+          <div class="service-card-accent"></div>
+          <h3>Tile Work & Installation</h3>
+          <p>Bathroom tile, kitchen backsplash, floor tile. Precision installation with clean, lasting results.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img" style="background-image:url('images/id-kitchen.jpg');"></div>
+        <div class="service-card-body">
+          <div class="service-card-accent"></div>
+          <h3>Kitchen & Bathroom Remodeling</h3>
+          <p>Full renovations from concept to completion. Cabinets, countertops, flooring, and more.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img" style="background-image:url('images/id-hero.jpg');"></div>
+        <div class="service-card-body">
+          <div class="service-card-accent"></div>
+          <h3>Drywall, Painting & Repairs</h3>
+          <p>Interior drywall repair, painting, and general home maintenance. No job too small.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img" style="background-image:url('images/id-gutter.jpg');"></div>
+        <div class="service-card-body">
+          <div class="service-card-accent"></div>
+          <h3>Gutter Cleaning</h3>
+          <p>Professional gutter cleaning to protect your home from water damage. Fast and thorough.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img" style="background-image:url('images/id-tile.jpg');"></div>
+        <div class="service-card-body">
+          <div class="service-card-accent"></div>
+          <h3>General Repairs & Maintenance</h3>
+          <p>Handyman services, interior repairs, and home maintenance. One call handles it all.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS SECTION -->
+<div class="stats-section">
+  <div class="stats-bg"></div>
+  <div class="stats-overlay"></div>
+  <div class="stats-accent-left"></div>
+  <div class="stats-accent-right"></div>
+  <div class="stats-content">
+    <div class="stats-container">
+      <div class="stats-card">
+        <div class="stat-item"><div class="stat-num">4.9★</div><div class="stat-label">Google Rating</div></div>
+        <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Satisfaction Rate</div></div>
+        <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Days a Week</div></div>
+        <div class="stat-item"><div class="stat-num">NE</div><div class="stat-label">Ohio Service Area</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section class="reviews-bg" id="reviews">
+  <div class="container">
+    <div class="section-label">What Customers Say</div>
+    <h2 class="section-title">4.9★ Google Reviews</h2>
+    <p class="section-sub">Real reviews from real customers across Northeast Ohio.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Every time I've ever used him everything he does it goes over and beyond what I've asked. Very highly recommended skilled person — get the job done the right time the first time every time."</p>
+        <div class="review-services">Services: Gutter cleaning, Flooring, Tile work replacement</div>
+        <div class="review-author">Steve Beaver</div>
+        <div class="review-rating">⭐ Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Very professional. Great work. Installed my flooring and did some general maintenance. I would highly recommend."</p>
+        <div class="review-services">Services: General repairs, Install flooring</div>
+        <div class="review-author">Jen</div>
+        <div class="review-rating">⭐ Google Review · Responsiveness, Punctuality, Quality, Professionalism, Value</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Awesome work — fast, efficient, on time, professional and polite. I would suggest these workers to everyone that needs work done. Five star without a doubt."</p>
+        <div class="review-services">Services: Flooring, Remodeling, Kitchen remodeling, Tile work, Drywall repair</div>
+        <div class="review-author">Thomas Ennis</div>
+        <div class="review-rating">⭐ Google Review · Responsiveness, Punctuality, Quality, Professionalism, Value</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS & LOCATION -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Find Us</div>
+    <h2 class="section-title">Hours & Contact</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Business Hours</h3>
+        <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">9:00 AM – 5:00 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">9:00 AM – 5:00 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">9:00 AM – 5:00 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">9:00 AM – 5:00 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">9:00 AM – 5:00 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9:00 AM – 5:00 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">9:00 AM – 5:00 PM</span></div>
+      </div>
+      <div class="info-card">
+        <h3>Contact Information</h3>
+        <div class="contact-item">📍 479 4th St, Struthers, OH 44471</div>
+        <div class="contact-item">📞 <a href="tel:4404128403">(440) 412-8403</a></div>
+        <div class="contact-item" style="margin-top:20px;">
+          <a href="https://maps.google.com/?q=479+4th+St+Struthers+OH+44471" target="_blank" style="color:var(--gold);font-weight:600;text-decoration:none;">📍 Get Directions on Google Maps →</a>
+        </div>
+        <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:0.82rem;line-height:1.6;">
+          Serving Struthers, Youngstown, and surrounding Northeast Ohio communities.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECONDARY CTA -->
+<section class="secondary-cta">
+  <div class="secondary-cta-grid">
+    <div class="secondary-cta-text">
+      <div class="section-label">Get Started Today</div>
+      <h2>Ready to Transform Your Home?</h2>
+      <p>Whether it's new flooring, a tile refresh, a full kitchen remodel, or just some repairs — we handle it all. Contact us today for a free, no-obligation estimate.</p>
+      <a href="tel:4404128403" class="btn-gold">📞 Call (440) 412-8403</a>
+    </div>
+    <div class="secondary-form">
+      <h3>Request a Callback</h3>
+      <p>Leave your info and we'll call you back within 24 hours.</p>
+      <div class="form-field"><label>Name</label><input type="text" placeholder="Your name"/></div>
+      <div class="form-field"><label>Phone</label><input type="tel" placeholder="(440) 000-0000"/></div>
+      <div class="form-field"><label>Best time to call</label>
+        <select><option>Morning (9AM-12PM)</option><option>Afternoon (12PM-3PM)</option><option>Evening (3PM-5PM)</option></select>
+      </div>
+      <button class="form-submit" onclick="submitCallbackForm(this)">Request Callback →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta">
+  <h2>Get the Job Done Right.</h2>
+  <p>Professional. On time. Every time. Call for your free estimate today.</p>
+  <a href="tel:4404128403" class="btn-white">📞 Call (440) 412-8403</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Innovative <span>Designs</span> LLC</div>
+  <p>© 2026 Innovative Designs LLC · 479 4th St, Struthers, OH 44471</p>
+  <a href="tel:4404128403">(440) 412-8403</a>
+</footer>
+
+<script>
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('main-nav');
+  const sticky = document.getElementById('sticky-cta');
+  if(window.scrollY > 80){
+    nav.classList.add('scrolled');
+    sticky.classList.add('visible');
+  } else {
+    nav.classList.remove('scrolled');
+    sticky.classList.remove('visible');
+  }
+});
+
+function submitHeroForm(){
+  document.getElementById('hero-form-fields').style.display='none';
+  document.getElementById('hero-form-success').style.display='block';
+}
+
+function submitCallbackForm(btn){
+  btn.textContent='✓ Request Sent!';
+  btn.style.background='#4CAF7D';
+  btn.disabled=true;
+}
+</script>
+
+</body>
+</html>
